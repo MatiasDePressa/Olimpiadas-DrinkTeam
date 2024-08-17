@@ -1,9 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Producto  # Asegúrate de que el modelo Producto esté definido en models.py
+from .models import Producto
 
-def detalle_producto(request, producto_id):
-    # Obtén el producto específico usando el ID proporcionado en la URL
-    producto = get_object_or_404(Producto, pk=producto_id)
-    
-    # Pasa el producto a la plantilla detalleProducto.html
-    return render(request, 'detalleProducto.html', {'producto': producto})
+def producto_detalle(request, producto_id):
+    producto = get_object_or_404(Producto, id_producto=producto_id)
+    return render(request, 'producto_detalle.html', {'producto': producto})
