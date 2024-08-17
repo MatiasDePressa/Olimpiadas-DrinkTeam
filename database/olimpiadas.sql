@@ -1,7 +1,3 @@
-CREATE DATABASE nombre_de_base_de_datos;
-USE nombre_de_base_de_datos;
-
-
 -- Creación de la tabla 'usuarios'
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
