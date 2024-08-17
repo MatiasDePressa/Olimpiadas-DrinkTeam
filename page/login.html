@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        *{
+            font-family: Arial;
+        }
+        h1{
+            margin-top: 40px;
+        }
+        body{
+            background-color: lavender;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        input{
+            margin-bottom: 10px;
+            width: 80%;
+        }
+
+        label{
+            font-weight: bold;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            padding: 3px;
+            text-align: center;
+            width: 30%;
+            margin: auto;
+            background-color: white;
+            border-radius: 7px;
+            border: 0px solid #333; /* Borde del elemento */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra del borde */
+        }
+        button{
+            background-color: black;
+            color: aliceblue;
+            width: 60%;
+            height: 25px;
+            padding: 3px;
+            margin: 10px 0px 15px 0px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <center>
+        <h1>Inicio de sesion</h1>
+
+        <label>
+            Ingrese su correo electronico
+        </label>
+        <br>
+        <input type="email" name="email" /><br>
+
+        <label>
+            ingrese la contraseña
+        </label>
+        <br>
+        <input type="password" name="password" /><br>
+
+        <br>
+        <button type="submit">Iniciar sesion</button>
+        
+    </center>
+    </form>
+</body>
+</html>

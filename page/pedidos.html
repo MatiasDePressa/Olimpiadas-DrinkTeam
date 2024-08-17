@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* estilos generales para el fondo y el título */
+        body {
+            background-color: #f8f9fa;
+        }
+        h1 {
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        /* estilo para la tabla, incluyendo bordes redondeados y sombra */
+        .table {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* color de fondo y texto para el encabezado de la tabla */
+        thead {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        /* centrando el contenido de las celdas de la tabla */
+        td, th {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        /* estilo personalizado para los botones */
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+        }
+        
+        /* cambiando el color de fondo del boton al pasar el raton */
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        
+        /* estilo para la barra lateral (sidebar) del usuario */
+        .sidebar {
+            background-color: #343a40; /* fondo oscuro */
+            padding: 20px; /* espaciado interno */
+            border-radius: 10px; /* bordes redondeados */
+            color: white; /* texto blanco */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* sombra */
+            margin-right: 10px; /* margen derecho para separar de la tabla */
+        }
+        
+        /* estilo del titulo de la barra lateral */
+        .sidebar h3 {
+            color: #007bff; /* color azul para el titulo */
+            margin-bottom: 20px; /* separacion debajo del titulo */
+        }
+        
+        /* haciendo que el select y el boton ocupen todo el ancho de la barra lateral */
+        .sidebar select, .sidebar button {
+            width: 100%;
+            margin-bottom: 20px; /* separacion inferior entre los elementos */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <!-- titulo centrado -->
+    <h1 class="text-center">Pedidos</h1>
+    
+    <!-- contenedor flexible que agrupa la barra lateral y la tabla -->
+    <div class="d-flex align-items-start">
+        
+        <div class="sidebar">
+            <h3>Usuario</h3>
+            <!-- selector de usuario -->
+            <select class="form-control">
+                <option> Usuario 1 </option>
+                <option> Usuario 2 </option>
+                <option> Usuario 3 </option>
+            </select>
+            <!-- boton para ver pedidos -->
+            <button class="btn btn-custom">Ver mis pedidos</button>
+        </div>
+        
+        <div class="flex-grow-1">
+            <table class="table table-bordered mt-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th> Fecha </th>
+                        <th> X </th>
+                        <th> X </th>
+                        <th> X </th>
+                        <th> Estado </th>
+                        <th> Reclamar </th>
+                        <th> Anular </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="date" class="form-control"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <select class="form-control">
+                                <option> Pendiente </option>
+                                <option> Entregado </option>
+                                <option> Pago pendiente </option>
+                                <option> Cancelado </option>
+                            </select>
+                        </td>
+                        <td><button class="btn btn-custom"> Reclamar </button></td>
+                        <td><button class="btn btn-danger"> Anular </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" class="form-control"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <select class="form-control">
+                                <option> Pendiente </option>
+                                <option> Entregado </option>
+                                <option> Pago pendiente </option>
+                                <option> Cancelado </option>
+                            </select>
+                        </td>
+                        <td><button class="btn btn-custom"> Reclamar </button></td>
+                        <td><button class="btn btn-danger"> Anular </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" class="form-control"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <select class="form-control">
+                                <option> Pendiente </option>
+                                <option> Entregado </option>
+                                <option> Pago pendiente </option>
+                                <option> Cancelado </option>
+                            </select>
+                        </td>
+                        <td><button class="btn btn-custom"> Reclamar </button></td>
+                        <td><button class="btn btn-danger"> Anular </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
