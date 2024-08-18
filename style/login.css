@@ -8,11 +8,11 @@ body {
     padding: 1%;
     border: solid;
 }
-#btn_baja{
+#btn_sesion{
     background-color: #b9030f;
     color: #ffffff;
 }
-#btn_baja:hover{
+#btn_sesion:hover{
     background-color: #9e0004;
     color: #ffffff;
 }
