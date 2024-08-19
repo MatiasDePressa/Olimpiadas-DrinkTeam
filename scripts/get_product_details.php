@@ -1,4 +1,5 @@
 <?php
+//get_product_details.php
 include 'db_connection.php';
 
 // Obtener el ID del producto de la URL y validarlo

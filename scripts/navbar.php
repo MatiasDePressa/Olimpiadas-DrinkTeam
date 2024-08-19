@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Logo de la página, que redirige al inicio -->
         <a class="navbar-brand" href="home.php">
-            <img src="img/logo.png" alt="Logo" width="30" height="30">
+            <img src="../img/logo.png" alt="Logo" width="30" height="30">
         </a>
         <!-- Botón de hamburguesa para dispositivos móviles -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
@@ -23,7 +23,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <img src="img/user.png" alt="Perfil" width="30" height="30">
+                        <img src="../img/Profile_icon.png" alt="Perfil" width="30" height="30">
                     </a>
                 </li>
                 <li class="nav-item">

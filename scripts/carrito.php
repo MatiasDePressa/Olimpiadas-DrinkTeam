@@ -1,4 +1,5 @@
 <?php
+//carrito.php
 include 'db_connection.php';
 include 'functions.php';
 
@@ -70,6 +71,13 @@ if (isset($_SESSION['carrito'])) {
         }
     }
 }
+
+
+function validarStockDisponible($product_id, $quantity) {
+    $product = getProductById($product_id);
+    return $product && $product['stock'] >= $quantity;
+}
+
 
 $conn->close();
 ?>

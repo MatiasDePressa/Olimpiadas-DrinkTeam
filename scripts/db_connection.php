@@ -1,4 +1,5 @@
 <?php
+//db_connection.php
 $host = 'localhost'; // Cambia esto si tu base de datos está en un host diferente
 $db = 'olimpiadas'; // Reemplaza con el nombre de tu base de datos
 $user = 'root'; // Reemplaza con tu usuario de la base de datos

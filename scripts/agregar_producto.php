@@ -1,4 +1,5 @@
 <?php
+//agregar_producto.php
 include 'db_connection.php';
 include 'functions.php';
 

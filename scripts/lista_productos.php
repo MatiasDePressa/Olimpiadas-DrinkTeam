@@ -1,4 +1,5 @@
 <?php
+//lista_productos.php
 include 'db_connection.php';
 include 'functions.php';
 
