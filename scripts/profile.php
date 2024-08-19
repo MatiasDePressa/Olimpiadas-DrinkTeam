@@ -11,41 +11,7 @@
 <body>
 
 <!-- Barra de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="../Imagenes/logo.png" alt="Logo" width="30" height="30">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex w-50 mx-auto">
-            <input class="form-control text-center me-2" type="search" placeholder="Buscar productos" aria-label="Buscar">
-            <button class="btn btn-outline-danger" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                </svg>
-            </button>
-        </form>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="perfil.html">
-              <img src="../Imagenes/Profile_icon.png" alt="Perfil" width="30" height="30">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="carrito.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
-                    <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
-                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<?php include 'navbar.php' ?>
 
 <!-- Cuerpo de la Página -->
 <div class="container my-5">
@@ -53,18 +19,7 @@
         <div class="card-body">
             <h1 class="card-title text-center mb-4">Mi perfil</h1>
             <div class="row">
-                <!-- Foto de Perfil -->
-                <div class="col-md-4 text-center">
-                    <div class="position-relative">
-                        <img src="../Imagenes/Profile_icon.png" class="img-fluid rounded-circle mb-3" alt="Foto de Perfil">
-                        <button class="btn btn-success position-absolute bottom-0 end-0" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#foto_edit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                <center>
                 <!-- Información del Usuario -->
                 <div class="col-md-8">
                     <div class="card mb-3" style="border: solid, 0px;">
@@ -110,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+                </center>
             </div>
             <!-- Botones debajo del perfil -->
             <div class="d-flex justify-content-around mt-4">

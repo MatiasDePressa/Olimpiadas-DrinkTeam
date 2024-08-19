@@ -10,35 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
     $id_categoria = $_POST['id_categoria'];
-    $imagen = $_FILES['imagen']['name'];
 
-    // Definir el directorio de destino
-    $target_dir = dirname(__FILE__) . '/../img/'; // Ruta relativa a la carpeta 'img'
-    $target_file = $target_dir . basename($imagen);
-    
-    // Verificar si el directorio existe
-    if (!is_dir($target_dir)) {
-        mkdir($target_dir, 0777, true); // Crear el directorio si no existe
-    }
+    // Insertar datos en la base de datos
+    $sql = "INSERT INTO productos (nombre, descripcion, precio, stock, id_categoria) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ssdii', $nombre, $descripcion, $precio, $stock, $id_categoria);
 
-    // Intentar mover el archivo cargado
-    if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
-        // Insertar datos en la base de datos
-        $sql = "INSERT INTO productos (nombre, descripcion, precio, stock, id_categoria, imagen) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('ssdiss', $nombre, $descripcion, $precio, $stock, $id_categoria, $imagen);
-
-        if ($stmt->execute()) {
-            $message = "Producto agregado correctamente.";
-        } else {
-            $message = "Error al agregar el producto: " . $stmt->error;
-        }
-
-        $stmt->close();
+    if ($stmt->execute()) {
+        $message = "Producto agregado correctamente.";
     } else {
-        $message = "Error al subir la imagen.";
+        $message = "Error al agregar el producto: " . $stmt->error;
     }
 
+    $stmt->close();
     $conn->close();
 }
 ?>
@@ -93,10 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
             </select>
-        </div>
-        <div class="mb-3">
-            <label for="imagen" class="form-label">Imagen</label>
-            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar Producto</button>
     </form>

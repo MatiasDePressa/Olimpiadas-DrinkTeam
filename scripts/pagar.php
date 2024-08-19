@@ -11,47 +11,8 @@
   </head>
 <body>
 <!-- Barra de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <!-- Logo de la página, que redirige al inicio -->
-    <a class="navbar-brand" href="index.html">
-      <img src="../Imagenes/logo.png" alt="Logo" width="30" height="30">
-    </a>
-    <!-- Botón de hamburguesa para dispositivos móviles -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Contenedor de la barra de navegación -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Barra de búsqueda centrada -->
-  <form class="d-flex w-50 mx-auto">
-      <input class="form-control text-center me-2" type="search" placeholder="Buscar productos" aria-label="Buscar">
-      <button class="btn btn-outline-danger" type="submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-          </svg>
-      </button>
-  </form>
-      <!-- Elementos que se muestran en computadoras -->
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="perfil.html">
-            <img src="../Imagenes/Profile_icon.png" alt="Perfil" width="30" height="30">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="carrito.html">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
-                  <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
-                  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-              </svg>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php include 'navbar.php'; ?>
+
     <div class="card" style="margin-top: 2%; margin-left: 35%;margin-right: 35%; padding: 1%;">
         <h1 class="mb-3">Pago</h1>
         <form action="/procesar_pago" method="post">
@@ -96,12 +57,12 @@
                 </div>
 
                 <br>
-                <label for="monto" class="form-label">Monto a pagar:</label>></label>
+                <label for="monto" class="form-label">Monto a pagar:</label>
                 <br>
 
             </div>
             <div class="text-end">
-                <a class="btn btn-success">
+                <a class="btn btn-success" href="lista_productos.php">
                     Pagar
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 1 16 16">
                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>

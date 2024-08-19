@@ -72,12 +72,19 @@ if (isset($_SESSION['carrito'])) {
     }
 }
 
+if (validarStockDisponible($product_id, $quantity)) {
+    updateCart($product_id, $quantity);
+}
+
+$total = 0;
+foreach ($productosCarrito as $producto) {
+    $total += $producto['precio'] * $producto['cantidad'];
+}
 
 function validarStockDisponible($product_id, $quantity) {
     $product = getProductById($product_id);
     return $product && $product['stock'] >= $quantity;
 }
-
 
 $conn->close();
 ?>
@@ -149,60 +156,51 @@ $conn->close();
             <?php endforeach; ?>
             <tr>
                 <td colspan="3" class="text-right"><strong>Total</strong></td>
-                <td colspan="4" class="text-right"><strong>
-                    <?php
-                    $total = 0;
-                    foreach ($productosCarrito as $producto) {
-                        $total += $producto['precio'] * $producto['cantidad'];
-                    }
-                    echo number_format($total, 2);
-                    ?>
-                </strong></td>
+                <td><strong><?php echo number_format($total, 2); ?></strong></td>
+                <td colspan="3"></td>
             </tr>
         </tbody>
     </table>
-    <div class="text-right">
-        <button class="btn btn-success" style="position: absolute; left: 80%;" onclick="location.href='index.html'">Continuar Comprando</button>
-        <button class="btn btn-danger" style="position: absolute; left: 90%;" type="submit" name="vaciar">Vaciar Carrito</button>
-    </div>
+
+    <button type="button" class="btn btn-primary" onclick="pagar()">Comprar</button>
 </form>
 
 <script>
-function actualizarCantidad(productId, change) {
-    var cantidadInput = document.getElementById('cantidad_' + productId);
-    var cantidad = parseInt(cantidadInput.value);
-    var nuevaCantidad = cantidad + change;
+function pagar() {
+    location.href = "pagar.html";
+}
 
-    if (nuevaCantidad < 1) {
-        nuevaCantidad = 1;
+function actualizarCantidad(productoId, cambio) {
+    var cantidadInput = document.getElementById('cantidad_' + productoId);
+    var nuevaCantidad = parseInt(cantidadInput.value) + cambio;
+    if (nuevaCantidad > 0) {
+        cantidadInput.value = nuevaCantidad;
+        var form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'carrito.php';
+
+        var inputProductId = document.createElement('input');
+        inputProductId.type = 'hidden';
+        inputProductId.name = 'product_id';
+        inputProductId.value = productoId;
+
+        var inputQuantity = document.createElement('input');
+        inputQuantity.type = 'hidden';
+        inputQuantity.name = 'quantity';
+        inputQuantity.value = nuevaCantidad;
+
+        var inputUpdate = document.createElement('input');
+        inputUpdate.type = 'hidden';
+        inputUpdate.name = 'update';
+        inputUpdate.value = '1';
+
+        form.appendChild(inputProductId);
+        form.appendChild(inputQuantity);
+        form.appendChild(inputUpdate);
+
+        document.body.appendChild(form);
+        form.submit();
     }
-
-    cantidadInput.value = nuevaCantidad;
-
-    // Aquí puedes agregar lógica para actualizar el carrito en el servidor
-    var form = document.createElement('form');
-    form.method = 'post';
-    form.action = 'carrito.php';
-    
-    var inputProductId = document.createElement('input');
-    inputProductId.type = 'hidden';
-    inputProductId.name = 'producto_id';
-    inputProductId.value = productId;
-    form.appendChild(inputProductId);
-    
-    var inputCantidad = document.createElement('input');
-    inputCantidad.type = 'hidden';
-    inputCantidad.name = 'cantidad';
-    inputCantidad.value = nuevaCantidad;
-    form.appendChild(inputCantidad);
-
-    var inputUpdate = document.createElement('input');
-    inputUpdate.type = 'hidden';
-    inputUpdate.name = 'update';
-    form.appendChild(inputUpdate);
-
-    document.body.appendChild(form);
-    form.submit();
 }
 </script>
 

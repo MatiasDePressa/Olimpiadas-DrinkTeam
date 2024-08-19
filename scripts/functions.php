@@ -131,6 +131,17 @@ function addToCart($product_id, $quantity) {
     }
 }
 
+function updateProductStock($conn, $product_id, $new_stock) {
+    $stmt = $conn->prepare("UPDATE productos SET stock = ? WHERE id_producto = ?");
+    $stmt->bind_param("ii", $new_stock, $product_id);
+    
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 function getUserCartId($conn, $user_id) {
     $stmt = $conn->prepare("SELECT id_carrito FROM carritos WHERE id_usuario = ?");
