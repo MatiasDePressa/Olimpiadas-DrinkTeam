@@ -167,7 +167,7 @@ $conn->close();
 
 <script>
 function pagar() {
-    location.href = "pagar.html";
+    location.href = "pagar.php";
 }
 
 function actualizarCantidad(productoId, cambio) {

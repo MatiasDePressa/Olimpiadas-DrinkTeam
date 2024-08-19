@@ -14,7 +14,7 @@
             <!-- Elementos que se muestran en computadoras -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="lista_productos.php">Inicio</a>
+                    <a class="nav-link" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="agregar_producto.php">Agregar producto</a>
